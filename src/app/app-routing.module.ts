@@ -3,13 +3,16 @@ import { CommonModule } from '@angular/common';
 import {AppComponent} from "./app.component";
 import {RouterModule, Routes} from "@angular/router";
 import {LoginComponent} from "./login/login.component";
-import {ListConnaissanceComponent} from "./login/list-connaissance/list-connaissance.component";
+import {ListConnaissanceComponent} from "./list-connaissance/list-connaissance.component";
+import {NavbarVerticalComponent} from "./navbar-vertical/navbar-vertical.component";
 
 
 const routes: Routes = [
   { path: '', component: AppComponent },
   {path:'login', component: LoginComponent},
-  {path:'listCo', component: ListConnaissanceComponent}
+  {path:'listeCo', loadChildren: () =>
+      import('./list-connaissance/list-connaissance/list-connaissance.module').then(mod => mod.ListConnaissanceModule)},
+  {path:'nav', component:NavbarVerticalComponent}
 ];
 @NgModule({
   declarations: [],
@@ -17,7 +20,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forRoot(routes)  ],
   exports: [
-    RouterModule
+    RouterModule,
   ]
 })
 export class AppRoutingModule { }

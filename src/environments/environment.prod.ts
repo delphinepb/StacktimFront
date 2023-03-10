@@ -1,3 +1,8 @@
 export const environment = {
-  production: true
+  production: false,
+  apis: {
+    connaissances: {
+      url: 'https://localhost:7219/Getallconnaissance'
+    }
+  }
 };
