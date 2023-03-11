@@ -5,6 +5,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {LoginComponent} from "./login/login.component";
 import {ListConnaissanceComponent} from "./list-connaissance/list-connaissance.component";
 import {NavbarVerticalComponent} from "./navbar-vertical/navbar-vertical.component";
+import {ConnaissanceComponent} from "./connaissance/connaissance.component";
 
 
 const routes: Routes = [
@@ -12,7 +13,9 @@ const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'listeCo', loadChildren: () =>
       import('./list-connaissance/list-connaissance/list-connaissance.module').then(mod => mod.ListConnaissanceModule)},
-  {path:'nav', component:NavbarVerticalComponent}
+  {path:'nav', component:NavbarVerticalComponent},
+  {path:'connaissance', loadChildren: () =>
+      import('./connaissance/connaissance/connaissance.module').then(mod => mod.ConnaissanceModule)},
 ];
 @NgModule({
   declarations: [],

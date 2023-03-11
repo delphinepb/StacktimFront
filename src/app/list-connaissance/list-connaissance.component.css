@@ -1,0 +1,21 @@
+h1 {
+  color: black;
+  text-align: center;
+  font-size: 30px;
+  font-family: "Arial Black";
+}
+
+table {
+  border: 1px solid dimgray;
+}
+
+a{
+  text-decoration: none;
+}
+tr {
+  text-align: center;
+}
+
+td {
+  text-align: center;
+}

@@ -21,10 +21,9 @@ import { ConnaissanceComponent } from './connaissance/connaissance.component';
     AppComponent,
     LoginComponent,
     NavbarVerticalComponent,
-    ConnaissanceComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({appId:'angular-starter'}),
+    BrowserModule.withServerTransition({appId: 'angular-starter'}),
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
@@ -35,6 +34,9 @@ import { ConnaissanceComponent } from './connaissance/connaissance.component';
     HttpClientModule
   ],
   providers: [ListConnaissanceService],
+  exports: [
+    NavbarVerticalComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

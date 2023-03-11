@@ -1,0 +1,24 @@
+<router-outlet></router-outlet>
+<h1>Connaissance</h1>
+
+
+<div class="container">
+  <table class="table">
+    <thead>
+    <tr class="table-secondary">
+      <th scope="col">Catégorie</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Description Courte</th>
+      <th scope="col">Description Longue</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let info of Uneconnaissance">
+      <td>{{info.categorie}}</td>
+      <td>{{info.nom}}</td>
+      <td>{{info.descriptionCourte}}</td>
+      <td>{{info.descriptionLongue}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

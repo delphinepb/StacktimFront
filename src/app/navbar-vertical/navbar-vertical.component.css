@@ -1,5 +1,7 @@
 .navbar{
-  background : linear-gradient(0.25turn, black, red)
+  background : linear-gradient(0.25turn, black, red);
+  margin-bottom: 20px;
+  background-color: grey;
 }
 .openNav{
   background-color: black;

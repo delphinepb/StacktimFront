@@ -17,12 +17,12 @@ export class ListConnaissanceComponent implements OnInit {
     this.loaded = false;
   }
   ngOnInit(): void {
-     this.getConnaissances();
+     this.getAllConnaissances();
   }
 
-  getConnaissances(): void {
+  getAllConnaissances(): void {
     this.loaded = false;
-    this.listConnaisanceService.getConnaissances(this.url)
+    this.listConnaisanceService.getAllConnaissances(this.url)
       .subscribe(
         connaissances => {
           this.connaissances = connaissances;

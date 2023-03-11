@@ -17,7 +17,7 @@ export class ListConnaissanceService {
 
   constructor(private http: HttpClient) { }
 
-  getConnaissances(url:string):Observable<object>{
+  getAllConnaissances(url:string):Observable<object>{
     return this.http.get(url, httpOtions);
   }
 }
