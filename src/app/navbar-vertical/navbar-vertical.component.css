@@ -1,9 +1,12 @@
 .navbar{
-  background : linear-gradient(0.25turn, black, red);
-  margin-bottom: 20px;
-  background-color: grey;
+  background-color: #872e32;
+  opacity: 0.7;
 }
 .openNav{
-  background-color: black;
+  background-color: #872e32;
   opacity: 0.7;
+}
+
+mat-sidenav-container {
+  background-color: white !important;
 }

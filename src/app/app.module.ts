@@ -15,12 +15,15 @@ import { NavbarVerticalComponent } from './navbar-vertical/navbar-vertical.compo
 import {HttpClientModule} from "@angular/common/http";
 import {ListConnaissanceService} from "./list-connaissance/list-connaissance.service";
 import { ConnaissanceComponent } from './connaissance/connaissance.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import { DialogAddComponent } from './dialog-add/dialog-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     NavbarVerticalComponent,
+    DialogAddComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'angular-starter'}),
@@ -31,7 +34,8 @@ import { ConnaissanceComponent } from './connaissance/connaissance.component';
     MatIconModule,
     MatListModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [ListConnaissanceService],
   exports: [

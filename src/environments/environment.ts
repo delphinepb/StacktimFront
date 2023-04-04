@@ -8,6 +8,14 @@ export const environment = {
     connaissances: {
       url: 'https://localhost:7219/Getallconnaissance',
       contentType : 'json'
+    },
+    connaissance: {
+      url: 'https://localhost:7219/GetConnaissanceById',
+      contentType : 'json'
+    },
+    ressources: {
+      url : 'https://localhost:7219/GetallRessource',
+      contentType : 'json'
     }
   }
 };

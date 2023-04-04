@@ -9,8 +9,8 @@ import {ConnaissanceComponent} from "./connaissance/connaissance.component";
 
 
 const routes: Routes = [
-  { path: '', component: AppComponent },
-  {path:'login', component: LoginComponent},
+  // { path: '', component: AppComponent },
+  {path:'', component: LoginComponent},
   {path:'listeCo', loadChildren: () =>
       import('./list-connaissance/list-connaissance/list-connaissance.module').then(mod => mod.ListConnaissanceModule)},
   {path:'nav', component:NavbarVerticalComponent},
