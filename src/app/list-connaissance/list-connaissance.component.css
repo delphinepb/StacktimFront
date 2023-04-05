@@ -12,7 +12,7 @@ table {
   border-collapse: collapse;
   border-radius: 1em;
   overflow: hidden;
-  border: 1px solid #d38181;
+  border: 1px solid #b67666;
 }
 
 a{
@@ -27,7 +27,18 @@ td {
 }
 
 .tabletr {
-  background-color: #d38181;
+  background-color: #b67666;
   color: #29292a;
+}
+
+button {
+  border-radius: 10px;
+  font-size: 15px;
+  background-color: white;
+}
+
+button:hover{
+  background-color: #b67666;
+  color: white;
 }
 

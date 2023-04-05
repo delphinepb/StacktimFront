@@ -17,6 +17,7 @@ import {ListConnaissanceService} from "./list-connaissance/list-connaissance.ser
 import { ConnaissanceComponent } from './connaissance/connaissance.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import { DialogAddComponent } from './dialog-add/dialog-add.component';
+import { DialogDeleteComponent } from './dialog-delete/dialog-delete.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { DialogAddComponent } from './dialog-add/dialog-add.component';
     LoginComponent,
     NavbarVerticalComponent,
     DialogAddComponent,
+    DialogDeleteComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'angular-starter'}),

@@ -5,7 +5,7 @@
   margin: 0;
   padding: 0;
   font-family: Raleway, sans-serif;
-  
+
 }
 
 .container {
@@ -16,11 +16,11 @@
 }
 
 .screen {
-  background: linear-gradient(90deg, black, red);
+  background: linear-gradient(90deg, black, #b67666);
   position: relative;
   height: 600px;
   width: 360px;
-  box-shadow: 0px 0px 24px red;
+  box-shadow: 0px 0px 24px #b67666;
 }
 
 .screen__content {
@@ -66,7 +66,7 @@
 .screen__background__shape3 {
   height: 540px;
   width: 190px;
-  background: linear-gradient(270deg, black, red);
+  background: linear-gradient(270deg, black, #b67666);
   top: -24px;
   right: 0;
   border-radius: 32px;
@@ -95,7 +95,7 @@
 .login__icon {
   position: absolute;
   top: 30px;
-  color: red;
+  color: #b67666;
 }
 
 .login__input {
@@ -113,7 +113,7 @@
 .login__input:focus,
 .login__input:hover {
   outline: none;
-  border-bottom-color: red;
+  border-bottom-color: #b67666;
 }
 
 .login__submit {
@@ -129,7 +129,7 @@
   align-items: center;
   width: 100%;
   color: black;
-  box-shadow: 0px 2px 2px red;
+  box-shadow: 0px 2px 2px #b67666;
   cursor: pointer;
   transition: .2s;
 }
@@ -137,7 +137,7 @@
 .login__submit:active,
 .login__submit:focus,
 .login__submit:hover {
-  border-color: red;
+  border-color: #b67666;
   outline: none;
 }
 
