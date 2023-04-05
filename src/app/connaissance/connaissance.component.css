@@ -4,6 +4,10 @@
   font-family: 'Poppins', sans-serif;
 }
 
+.tab {
+  color:black !important;
+}
+
 h1 {
   color: #d38181;
   font-size: 30px;

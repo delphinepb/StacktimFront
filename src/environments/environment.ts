@@ -2,16 +2,19 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+let id;
 export const environment = {
   production: false,
   apis: {
     connaissances: {
       url: 'https://localhost:7219/Getallconnaissance',
+      urldelete:`https://localhost:7219/Deleteconnaissance/${id}`,
+      urlcreate :'https://localhost:7219/Createconnaissance',
       contentType : 'json'
     },
     connaissance: {
       url: 'https://localhost:7219/GetConnaissanceById',
-      contentType : 'json'
+      contentType : 'json',
     },
     ressources: {
       url : 'https://localhost:7219/GetallRessource',

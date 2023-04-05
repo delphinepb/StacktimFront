@@ -1,0 +1,20 @@
+<h1>Ajouter une connaissance</h1>
+<form (ngSubmit)="onSubmit()">
+  <label>Id:</label>
+  <input type="number" [(ngModel)]="idc" name="idc"><br>
+
+  <label>Nom:</label>
+  <input type="text" [(ngModel)]="nom" name="nom"><br>
+
+  <label>Catégorie:</label>
+  <input type="text"  [(ngModel)]="cat" name="cat"><br>
+
+  <label>Description courte:</label>
+  <textarea rows="3" cols="40" [(ngModel)]="descC" name="descC"></textarea><br>
+
+  <label>Description longue:</label>
+  <textarea rows="3" cols="40"  [(ngModel)]="descL" name="descL"></textarea><br>
+
+  <button type="submit">Ajouter</button>
+</form>
+

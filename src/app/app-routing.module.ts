@@ -16,6 +16,8 @@ const routes: Routes = [
   {path:'nav', component:NavbarVerticalComponent},
   {path:'connaissance', loadChildren: () =>
       import('./connaissance/connaissance/connaissance.module').then(mod => mod.ConnaissanceModule)},
+  {path:'listeRess', loadChildren : () =>
+      import('./list-ressources/list-ressource/list-ressource.module').then(mod => mod.ListRessourceModule)}
 ];
 @NgModule({
   declarations: [],

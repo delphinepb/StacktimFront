@@ -16,9 +16,11 @@ import {HttpClientModule} from "@angular/common/http";
 import {ListConnaissanceService} from "./list-connaissance/list-connaissance.service";
 import { ConnaissanceComponent } from './connaissance/connaissance.component';
 import {MatDialogModule} from "@angular/material/dialog";
-import { DialogAddComponent } from './dialog-add/dialog-add.component';
-import { DialogDeleteComponent } from './dialog-delete/dialog-delete.component';
-
+import { DialogAddComponent } from './dialog/dialog-add/dialog-add.component';
+import { DialogDeleteComponent } from './dialog/dialog-delete/dialog-delete.component';
+import {FormsModule} from "@angular/forms";
+import { ListRessourcesComponent } from './list-ressources/list-ressources.component';
+import { DialogAddRessComponent } from './dialog/dialog-add-ress/dialog-add-ress.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +28,7 @@ import { DialogDeleteComponent } from './dialog-delete/dialog-delete.component';
     NavbarVerticalComponent,
     DialogAddComponent,
     DialogDeleteComponent,
+    DialogAddRessComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'angular-starter'}),
@@ -37,7 +40,8 @@ import { DialogDeleteComponent } from './dialog-delete/dialog-delete.component';
     MatListModule,
     MatButtonModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule,
   ],
   providers: [ListConnaissanceService],
   exports: [

@@ -26,4 +26,12 @@ export class ConnaissanceService {
   getConnaissance(url:string):Observable<object>{
     return this.http.get(url, httpOtions);
   }
+
+  getRessources(url:string):Observable<object>{
+    return this.http.get(url, httpOptions);
+  }
+
+  getProjets(url:string):Observable<object>{
+    return this.http.get(url, httpOptions);
+  }
 }

@@ -1,3 +1,7 @@
+.mat-typography{
+  background-color: whitesmoke !important;
+}
+
 .navbar{
   background-color: whitesmoke;
   color: #872e32;
@@ -7,6 +11,7 @@
   background-color: whitesmoke;
   color: #872e32;
   opacity: 0.7;
+  width: 150px;
 }
 
 mat-sidenav-container {

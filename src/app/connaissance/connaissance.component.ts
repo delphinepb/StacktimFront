@@ -10,9 +10,9 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class ConnaissanceComponent implements OnInit {
 
-  Uneconnaissance:any;
+  ressources:any;
   selectedConnaissance : any;
-  private url = environment.apis.connaissance.url;
+  private url = environment.apis.ressources.url;
   constructor( private connaissanceService:ConnaissanceService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -21,15 +21,17 @@ export class ConnaissanceComponent implements OnInit {
     this.connaissanceService.getConnaissance(this.selectedConnaissance.nom).subscribe(data => {
       this.selectedConnaissance = data
     })}
+
+    this.getAllRessources();
   }
 
-  getConnaissance():void{
-    this.connaissanceService.getConnaissance('https://localhost:7219/GetConnaissanceById/')
+  getAllRessources(): void {
+    this.connaissanceService.getRessources(this.url)
       .subscribe(
-        connaissance => {
-          this.Uneconnaissance = connaissance;
-        }
-      )
+        ressources => {
+          this.ressources = ressources;
+
+        });
   }
 
 }
