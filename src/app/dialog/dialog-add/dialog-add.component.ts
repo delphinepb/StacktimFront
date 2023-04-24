@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {catchError, throwError} from "rxjs";
 import {environment} from "../../../environments/environment";
+import {ConnaissanceService} from "../../services/connaissance.service";
 
 @Component({
   selector: 'app-dialog-add',
@@ -9,29 +10,21 @@ import {environment} from "../../../environments/environment";
   styleUrls: ['./dialog-add.component.css']
 })
 export class DialogAddComponent {
-  idc : string | undefined;
+  idCategorie : string | undefined;
   nom: string | undefined;
-  cat: string |undefined;
-  descC : string | undefined;
-  descL: string | undefined;
+  categorie: string |undefined;
+  descriptionCourte : string | undefined;
+  descriptionLongue: string | undefined;
   private urlCreate = environment.apis.connaissances.urlcreate;
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private connaissanceService: ConnaissanceService) { }
 
-  onSubmit(){
-    const data = {
-      idc: this.idc,
-      nom: this.nom,
-      cat: this.cat,
-      dscC:this.descC,
-      dscL : this.descL
-    };
-    this.http.post(this.urlCreate, data)
-      .subscribe(response => {
-        console.log('Réponse de l\'API : ', response);
-      }, (error: HttpErrorResponse) => {
-        // Gérer les erreurs HTTP ici
-        console.log('Une erreur s\'est produite : ', error.message);
-      });
+  postConnaissance(){
+    const url = environment.apis.connaissances.urlcreate;
+    const data = {"idCategorie": this.idCategorie  ,"nom" : this.nom, "categorie" : this.categorie, "descriptionCourte" : this.descriptionCourte, "descriptionLongue":this.descriptionLongue} ;
+
+    this.connaissanceService.postConnaissance(url, data).subscribe(response =>
+    console.log(response))
+    console.log(data)
   }
 
 }

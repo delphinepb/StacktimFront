@@ -3,7 +3,7 @@ import {environment} from "../../environments/environment";
 import {Router} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
 import {HttpClient} from "@angular/common/http";
-import {ListRessourcesService} from "./list-ressources.service";
+import {ListRessourcesService} from "../services/list-ressources.service";
 import {DialogAddComponent} from "../dialog/dialog-add/dialog-add.component";
 import {DialogAddRessComponent} from "../dialog/dialog-add-ress/dialog-add-ress.component";
 

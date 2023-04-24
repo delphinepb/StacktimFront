@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ListConnaissanceService} from "./list-connaissance.service";
+import { ListConnaissanceService} from "../services/list-connaissance.service";
 import { environment} from "../../environments/environment";
 import {Router} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
 import {DialogAddComponent} from "../dialog/dialog-add/dialog-add.component";
-import {DialogDeleteComponent} from "../dialog/dialog-delete/dialog-delete.component";
-import {HttpClient} from "@angular/common/http";
+import {DialogUpdateComponent} from "../dialog/dialog-update/dialog-update.component";
 
 @Component({
   selector: 'app-list-connaissance',
@@ -20,8 +19,7 @@ export class ListConnaissanceComponent implements OnInit {
 
   constructor(private listConnaisanceService: ListConnaissanceService,
               private router :Router,
-              private dialog: MatDialog,
-              private http : HttpClient) {
+              private dialog: MatDialog) {
 
     this.loaded = false;
   }
@@ -45,11 +43,9 @@ export class ListConnaissanceComponent implements OnInit {
   }
 
   deleteConnaissance(id:number){
-    this.listConnaisanceService.deleteConnaissance(id).subscribe(()=>{
-      const index = this.connaissances.findIndex((d: { id: number; }) => d.id === id);
-      this.connaissances.splice(index,1);
-      }
-    )
+    this.listConnaisanceService.deleteConnaissance(id).subscribe(response => {
+      console.log('Connaissance supprimée avec succès !');
+    });
   }
 
   getAllConnaissances(): void {
@@ -67,5 +63,11 @@ export class ListConnaissanceComponent implements OnInit {
     this.router.navigate(['/connaissance'],{state:{selectedConnaissance:co}});
   }
 
-
+  update(co:any){
+    this.selectedConnaissance = co;
+    const dialogRef = this.dialog.open(DialogUpdateComponent, {
+      width: '700px',
+      height: '600px',
+    });
+  }
 }

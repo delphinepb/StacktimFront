@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ConnaissanceService} from "./connaissance.service";
+import { ConnaissanceService} from "../services/connaissance.service";
 import {environment} from "../../environments/environment";
 import {ActivatedRoute} from "@angular/router";
 

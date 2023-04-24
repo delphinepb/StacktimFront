@@ -8,8 +8,9 @@ export const environment = {
   apis: {
     connaissances: {
       url: 'https://localhost:7219/Getallconnaissance',
-      urldelete:`https://localhost:7219/Deleteconnaissance/${id}`,
+      urldelete:`https://localhost:7219/Deleteconnaissance`,
       urlcreate :'https://localhost:7219/Createconnaissance',
+      urlupdate : 'https://localhost:7219/Updateconnaissance',
       contentType : 'json'
     },
     connaissance: {

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import { Observable} from "rxjs";
+import {catchError, Observable, throwError} from "rxjs";
+import {environment} from "../../environments/environment";
 
 const httpOtions = {
   headers: new HttpHeaders(
@@ -33,5 +34,19 @@ export class ConnaissanceService {
 
   getProjets(url:string):Observable<object>{
     return this.http.get(url, httpOptions);
+  }
+
+  postConnaissance(url: string, body:any){
+    return this.http.put(url, body).pipe(
+      catchError(erreur => {
+        console.log('une erreur est survenue lors de l ajout de la connaissance:', erreur);
+        return throwError(erreur);
+      })
+    );
+  }
+
+  updateConnaissance(id:number, data:any):Observable<any>{
+    const url = `${environment.apis.connaissances.urlupdate}/${id}`
+    return this.http.put(url, data);
   }
 }

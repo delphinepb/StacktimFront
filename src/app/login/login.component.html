@@ -2,16 +2,16 @@
 <div class="container">
   <div class="screen">
     <div class="screen__content">
-      <form class="login">
+      <form class="login" [formGroup]="loginForm" >
         <div class="login__field">
           <i class="login__icon fas fa-user"></i>
-          <input type="text" class="login__input" placeholder="Email">
+          <input id="email" formControlName="email" required  type="text" class="login__input" placeholder="Email">
         </div>
         <div class="login__field">
           <i class="login__icon fas fa-lock"></i>
-          <input type="password" class="login__input" placeholder="Mot de passe">
+          <input id="password" formControlName="password" required type="password" class="login__input" placeholder="Mot de passe">
         </div>
-        <button class="button login__submit">
+        <button type="submit" [disabled]="loginForm.invalid" class="button login__submit">
           <span class="button__text">Se connecter</span>
           <i class="button__icon fas fa-chevron-right"></i>
         </button>
