@@ -27,6 +27,13 @@ export class ListConnaissanceComponent implements OnInit {
      this.getAllConnaissances();
   }
 
+  reloadPage() {
+    const currentUrl = this.router.url;
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigateByUrl(currentUrl);
+    });
+  }
+
   ouvrirDialogAdd(){
     const dialogRef = this.dialog.open(DialogAddComponent, {
       width: '700px',
@@ -46,6 +53,7 @@ export class ListConnaissanceComponent implements OnInit {
     this.listConnaisanceService.deleteConnaissance(id).subscribe(response => {
       console.log('Connaissance supprimée avec succès !');
     });
+    this.reloadPage();
   }
 
   getAllConnaissances(): void {

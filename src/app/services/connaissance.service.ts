@@ -28,13 +28,6 @@ export class ConnaissanceService {
     return this.http.get(url, httpOtions);
   }
 
-  getRessources(url:string):Observable<object>{
-    return this.http.get(url, httpOptions);
-  }
-
-  getProjets(url:string):Observable<object>{
-    return this.http.get(url, httpOptions);
-  }
 
   postConnaissance(url: string, body:any){
     return this.http.put(url, body).pipe(
@@ -45,8 +38,4 @@ export class ConnaissanceService {
     );
   }
 
-  updateConnaissance(id:number, data:any):Observable<any>{
-    const url = `${environment.apis.connaissances.urlupdate}/${id}`
-    return this.http.put(url, data);
-  }
 }

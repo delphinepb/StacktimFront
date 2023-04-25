@@ -11,14 +11,28 @@ export const environment = {
       urldelete:`https://localhost:7219/Deleteconnaissance`,
       urlcreate :'https://localhost:7219/Createconnaissance',
       urlupdate : 'https://localhost:7219/Updateconnaissance',
+      urlbyid:'https://localhost:7219/GetConnaissanceById',
       contentType : 'json'
-    },
-    connaissance: {
-      url: 'https://localhost:7219/GetConnaissanceById',
-      contentType : 'json',
     },
     ressources: {
       url : 'https://localhost:7219/GetallRessource',
+      urlcreate : 'https://localhost:7219/CreateRessource',
+      urldelete:'https://localhost:7219/DeleteRessource',
+      urlupdate:'https://localhost:7219/UpdateRessource',
+      contentType : 'json'
+    },
+    typeressource:{
+      url:'https://localhost:7219/GetallTypeR',
+      urlcreate : 'https://localhost:7219/CreateTypeR',
+      urldelete:'https://localhost:7219/DeleteTypeR',
+      urlupdate:'https://localhost:7219/UpdateTypeR',
+      contentType : 'json'
+    },
+    categorie:{
+      url:'https://localhost:7219/Getallcategorie',
+      urlcreate : 'https://localhost:7219/Createcategorie',
+      urldelete:'https://localhost:7219/Deletecategorie',
+      urlupdate:'https://localhost:7219/Updatecategorie',
       contentType : 'json'
     }
   }

@@ -28,6 +28,19 @@ export class ListRessourcesComponent implements OnInit {
   ngOnInit(): void {
     this.getAllRessources();
   }
+
+  reloadPage() {
+    const currentUrl = this.router.url;
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigateByUrl(currentUrl);
+    });
+  }
+  ouvrirDialogAddRessource(){
+    const dialogRef = this.dialog.open(DialogAddRessComponent, {
+      width: '700px',
+      height: '600px',
+    });
+  }
   getAllRessources(): void {
     this.listRessourcesService.getAllRessources(this.url)
       .subscribe(
@@ -37,11 +50,12 @@ export class ListRessourcesComponent implements OnInit {
         });
   }
 
+
   deleteRessource(id:number){
-    this.listRessourcesService.deleteRessource(id).subscribe(()=>{
-        const index = this.ressources.findIndex((d: { id: number; }) => d.id === id);
-        this.ressources.splice(index,1);
-      }
-    )
+    this.listRessourcesService.deleteRessource(id).subscribe(response => {
+      console.log('Connaissance supprimée avec succès !');
+    });
+    this.reloadPage();
   }
+
 }

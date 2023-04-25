@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import {Observable} from "rxjs";
+import {catchError, Observable, throwError} from "rxjs";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {MatDialog} from "@angular/material/dialog";
+import {environment} from "../../environments/environment";
 
 const httpOtions = {
   headers: new HttpHeaders(
@@ -21,8 +22,14 @@ export class ListRessourcesService {
     return this.http.get(url, httpOtions);
   }
 
+
   deleteRessource(id:number):Observable<any>{
-    const url = `https://localhost:7219/DeleteRessource/${id}`
-    return this.http.delete(url);
+    const url = `${environment.apis.ressources.urldelete}/${id}`;
+    return this.http.delete(url).pipe(
+      catchError(erreur => {
+        console.log('une erreur est survenue lors de la suppression de la connaissance:', erreur);
+        return throwError(erreur);
+      })
+    );
   }
 }

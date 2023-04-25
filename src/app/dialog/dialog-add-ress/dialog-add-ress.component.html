@@ -1,1 +1,23 @@
-<p>dialog-add-ress works!</p>
+<h1>Ajouter une ressource</h1>
+<form >
+  <label>Id type ressource:</label>
+  <input type="number" [(ngModel)]="idType" name="idType"><br>
+
+  <label>Id connaissance:</label>
+  <input type="number" [(ngModel)]="idCo" name="idCo"><br>
+
+  <label>Type Ressource:</label>
+  <input type="text"  [(ngModel)]="typeRess" name="typeRess"><br>
+
+  <label>Date de publication:</label>
+  <input type="date"  [(ngModel)]="datePublication" name="datePublication"><br>
+
+  <label>Créateur:</label>
+  <input type="text"  [(ngModel)]="createur" name="createur"><br>
+
+  <label>Contenu:</label>
+  <input type="text"  [(ngModel)]="contenu" name="contenu"><br>
+
+  <button (click)="postRessource()" type="submit">Ajouter</button>
+</form>
+

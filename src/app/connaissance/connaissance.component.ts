@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ConnaissanceService} from "../services/connaissance.service";
 import {environment} from "../../environments/environment";
 import {ActivatedRoute} from "@angular/router";
+import {RessourceService} from "../services/ressource.service";
 
 @Component({
   selector: 'app-connaissance',
@@ -13,7 +14,7 @@ export class ConnaissanceComponent implements OnInit {
   ressources:any;
   selectedConnaissance : any;
   private url = environment.apis.ressources.url;
-  constructor( private connaissanceService:ConnaissanceService, private route:ActivatedRoute) { }
+  constructor( private connaissanceService:ConnaissanceService, private ressourceService :RessourceService) { }
 
   ngOnInit(): void {
     this.selectedConnaissance = history.state.selectedConnaissance;
@@ -26,7 +27,7 @@ export class ConnaissanceComponent implements OnInit {
   }
 
   getAllRessources(): void {
-    this.connaissanceService.getRessources(this.url)
+    this.ressourceService.getRessources(this.url)
       .subscribe(
         ressources => {
           this.ressources = ressources;
