@@ -15,9 +15,14 @@ export class RessourceService {
 
   constructor(private http : HttpClient) { }
 
-  getRessources(url:string):Observable<object>{
+  getRessource(url:string):Observable<object>{
     return this.http.get(url, httpOptions);
   }
+
+  getRessourcesByIdco(url:string):Observable<object>{
+    return this.http.get(url, httpOptions);
+  }
+
   postRessource(url: string, body:any){
     return this.http.put(url, body).pipe(
       catchError(erreur => {

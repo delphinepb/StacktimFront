@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {AppComponent} from "./app.component";
 import {RouterModule, Routes} from "@angular/router";
 import {LoginComponent} from "./login/login.component";
-import {ListConnaissanceComponent} from "./list-connaissance/list-connaissance.component";
 import {NavbarVerticalComponent} from "./navbar-vertical/navbar-vertical.component";
-import {ConnaissanceComponent} from "./connaissance/connaissance.component";
 
 
 const routes: Routes = [
@@ -17,7 +14,9 @@ const routes: Routes = [
   {path:'connaissance', loadChildren: () =>
       import('./connaissance/connaissance/connaissance.module').then(mod => mod.ConnaissanceModule)},
   {path:'listeRess', loadChildren : () =>
-      import('./list-ressources/list-ressource/list-ressource.module').then(mod => mod.ListRessourceModule)}
+      import('./list-ressources/list-ressource/list-ressource.module').then(mod => mod.ListRessourceModule)},
+  {path:'ressource', loadChildren: () =>
+      import('./ressource/ressource/ressource.module').then(mod => mod.RessourceModule)}
 ];
 @NgModule({
   declarations: [],

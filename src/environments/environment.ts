@@ -16,6 +16,7 @@ export const environment = {
     },
     ressources: {
       url : 'https://localhost:7219/GetallRessource',
+      urlbyidco : 'https://localhost:7219/GetRessbyCo',
       urlcreate : 'https://localhost:7219/CreateRessource',
       urldelete:'https://localhost:7219/DeleteRessource',
       urlupdate:'https://localhost:7219/UpdateRessource',

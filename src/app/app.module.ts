@@ -22,6 +22,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ListRessourcesComponent } from './list-ressources/list-ressources.component';
 import { DialogAddRessComponent } from './dialog/dialog-add-ress/dialog-add-ress.component';
 import { DialogUpdateComponent } from './dialog/dialog-update/dialog-update.component';
+import { RessourceComponent } from './ressource/ressource.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +32,7 @@ import { DialogUpdateComponent } from './dialog/dialog-update/dialog-update.comp
     DialogDeleteComponent,
     DialogAddRessComponent,
     DialogUpdateComponent,
+
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'angular-starter'}),

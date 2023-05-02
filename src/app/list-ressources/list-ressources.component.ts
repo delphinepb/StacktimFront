@@ -16,6 +16,7 @@ export class ListRessourcesComponent implements OnInit {
 
   ressources : any;
   loaded: boolean;
+  selectedRessource : any;
   private url = environment.apis.ressources.url;
 
   constructor(private listRessourcesService: ListRessourcesService,
@@ -48,6 +49,11 @@ export class ListRessourcesComponent implements OnInit {
           this.ressources = ressources;
 
         });
+  }
+
+  showDetails(re: any){
+    this.selectedRessource =  re;
+    this.router.navigate(['/ressource'],{state:{selectedRessource:re}});
   }
 
 

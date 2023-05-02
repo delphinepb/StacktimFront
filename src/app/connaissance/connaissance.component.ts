@@ -14,6 +14,7 @@ export class ConnaissanceComponent implements OnInit {
   ressources:any;
   selectedConnaissance : any;
   private url = environment.apis.ressources.url;
+  private urlgetbyidco = environment.apis.ressources.urlbyidco;
   constructor( private connaissanceService:ConnaissanceService, private ressourceService :RessourceService) { }
 
   ngOnInit(): void {
@@ -23,16 +24,15 @@ export class ConnaissanceComponent implements OnInit {
       this.selectedConnaissance = data
     })}
 
-    this.getAllRessources();
+    this.getRessByidCo();
   }
-
-  getAllRessources(): void {
-    this.ressourceService.getRessources(this.url)
+  getRessByidCo():void {
+    this.ressourceService.getRessourcesByIdco(this.urlgetbyidco)
       .subscribe(
         ressources => {
           this.ressources = ressources;
-
-        });
+        }
+      );
   }
 
 }
