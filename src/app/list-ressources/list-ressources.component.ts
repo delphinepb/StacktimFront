@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {environment} from "../../environments/environment";
 import {Router} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
-import {HttpClient} from "@angular/common/http";
 import {ListRessourcesService} from "../services/list-ressources.service";
-import {DialogAddComponent} from "../dialog/dialog-add/dialog-add.component";
 import {DialogAddRessComponent} from "../dialog/dialog-add-ress/dialog-add-ress.component";
 
 @Component({
@@ -21,8 +19,7 @@ export class ListRessourcesComponent implements OnInit {
 
   constructor(private listRessourcesService: ListRessourcesService,
               private router :Router,
-              private dialog: MatDialog,
-              private http : HttpClient) {
+              private dialog: MatDialog) {
     this.loaded = false;
   }
 
@@ -43,19 +40,20 @@ export class ListRessourcesComponent implements OnInit {
     });
   }
   getAllRessources(): void {
+    this.loaded = false;
     this.listRessourcesService.getAllRessources(this.url)
       .subscribe(
         ressources => {
           this.ressources = ressources;
-
+          this.loaded = true;
         });
   }
 
   showDetails(re: any){
     this.selectedRessource =  re;
     this.router.navigate(['/ressource'],{state:{selectedRessource:re}});
+    console.log(this.selectedRessource);
   }
-
 
   deleteRessource(id:number){
     this.listRessourcesService.deleteRessource(id).subscribe(response => {

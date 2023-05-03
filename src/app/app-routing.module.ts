@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
 import {LoginComponent} from "./login/login.component";
 import {NavbarVerticalComponent} from "./navbar-vertical/navbar-vertical.component";
+import {ListConnaissanceComponent} from "./list-connaissance/list-connaissance.component";
 
 
 const routes: Routes = [
   // { path: '', component: AppComponent },
-  {path:'', component: LoginComponent},
+  {path:'', component: ListConnaissanceComponent},
+  {path:'login', component: LoginComponent},
   {path:'listeCo', loadChildren: () =>
       import('./list-connaissance/list-connaissance/list-connaissance.module').then(mod => mod.ListConnaissanceModule)},
   {path:'nav', component:NavbarVerticalComponent},

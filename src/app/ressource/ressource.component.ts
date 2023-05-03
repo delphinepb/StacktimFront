@@ -12,9 +12,9 @@ export class RessourceComponent implements OnInit {
   constructor(private ressourceService :RessourceService) { }
 
   ngOnInit(): void {
-    this.selectedRessource = history.state.selectedConnaissance;
+    this.selectedRessource = history.state.selectedRessource;
     if (this.selectedRessource) {
-      this.ressourceService.getRessource(this.selectedRessource.nom).subscribe(data => {
+      this.ressourceService.getRessource(this.selectedRessource.typeRess).subscribe(data => {
         this.selectedRessource = data
       })}
   }

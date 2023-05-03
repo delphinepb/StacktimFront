@@ -27,7 +27,7 @@ export class ListRessourcesService {
     const url = `${environment.apis.ressources.urldelete}/${id}`;
     return this.http.delete(url).pipe(
       catchError(erreur => {
-        console.log('une erreur est survenue lors de la suppression de la connaissance:', erreur);
+        console.log('une erreur est survenue lors de la suppression de la ressource:', erreur);
         return throwError(erreur);
       })
     );

@@ -39,6 +39,9 @@ export class ListConnaissanceComponent implements OnInit {
       width: '700px',
       height: '600px',
     });
+    dialogRef.afterClosed().subscribe(result => {
+      this.reloadPage();
+    })
   }
 
   ouvrirDialogDelete(i:number){

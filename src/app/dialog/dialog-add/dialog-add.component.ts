@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
 import {ConnaissanceService} from "../../services/connaissance.service";
+import {MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-dialog-add',
@@ -15,7 +16,10 @@ export class DialogAddComponent {
   descriptionCourte : string | undefined;
   descriptionLongue: string | undefined;
   private urlCreate = environment.apis.connaissances.urlcreate;
-  constructor(private http:HttpClient, private connaissanceService: ConnaissanceService) { }
+  constructor(private http:HttpClient,
+              private connaissanceService: ConnaissanceService,
+              public dialogRef: MatDialogRef<DialogAddComponent>
+              ) { }
 
   postConnaissance(){
     const url = environment.apis.connaissances.urlcreate;
@@ -24,6 +28,12 @@ export class DialogAddComponent {
     this.connaissanceService.postConnaissance(url, data).subscribe(response =>
     console.log(response))
     console.log(data)
+    this.closeDialog();
   }
+
+  closeDialog():void {
+    this.dialogRef.close('resultat');
+  }
+
 
 }
