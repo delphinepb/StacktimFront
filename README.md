@@ -1,28 +1,42 @@
-    API .net
-Bienvenue dans l'API de gestion des projets ainsi que de ses connaissances, catégories et ressources ! Cette API est construite à l'aide de la plateforme .NET et permet de réaliser des opérations CRUD (Create, Read, Update, Delete) sur différentes entités, notamment les connaissances, les catégories, les projets et les ressources.
+    Application Angular de gestion des connaissances
+Bienvenue dans l'application Angular de gestion des connaissances ! Cette application vous permet de gérer vos connaissances et ressources grâce à une interface conviviale. Vous pouvez accéder à l'application via votre navigateur à l'URL suivante :
 
+Page de login (non fonctionnelle) : http://localhost:4200/login
+Page principale (liste des connaissances) : http://localhost:4200/
+Page de liste des ressources : http://localhost:4200/listeRess
 
     Installation
-Pour exécuter cette API localement, suivez les étapes ci-dessous :
-Assurez-vous d'avoir installé .NET Core SDK sur votre machine.
-Clonez ce dépôt GitHub sur votre machine locale.
-Accédez au répertoire du projet dans votre terminal ou votre invite de commandes.
-Exécutez la commande suivante pour restaurer les dépendances du projet :
-          dotnet restore
-Ensuite, exécutez la commande suivante pour démarrer l'API :
-          dotnet run
-L'API sera maintenant accessible à l'adresse https://localhost:7219.
+Pour exécuter cette application localement, suivez les étapes ci-dessous :
 
+-Assurez-vous d'avoir installé Node.js sur votre machine.
+-Clonez ce dépôt GitHub sur votre machine locale.
+-Accédez au répertoire du projet dans votre terminal ou votre invite de commandes.
+-Exécutez la commande suivante pour installer les dépendances :
+      npm install
+Ensuite, exécutez la commande suivante pour démarrer l'application :
+      npm start
+L'application sera maintenant accessible à l'adresse http://localhost:4200.
 
-    Utilisation
-Une fois l'API en cours d'exécution, vous pouvez utiliser les différentes fonctionnalités via l'interface Swagger. Ouvrez simplement https://localhost:7219/swagger/index.html
+    Fonctionnalités
+L'application Angular de gestion des connaissances propose les fonctionnalités suivantes :
 
-Les principales fonctionnalités fournies par cette API incluent :
+Page de login
+La page de login vous permet de vous connecter à l'application. Veuillez noter que cette fonctionnalité n'est pas encore implémentée dans la version actuelle de l'application. Vous pouvez utiliser un mécanisme d'authentification personnalisé ou intégrer une solution d'authentification tierce selon vos besoins.
 
-Connaissances: CRUD (Create, Read, Update, Delete) pour gérer les connaissances. Vous pouvez créer de nouvelles connaissances, récupérer les connaissances existantes, les mettre à jour et les supprimer.
-Catégories: CRUD pour gérer les catégories de connaissances. Vous pouvez créer de nouvelles catégories, récupérer les catégories existantes, les mettre à jour et les supprimer.
-Projets: CRUD pour gérer les projets. Vous pouvez créer de nouveaux projets, récupérer les projets existants, les mettre à jour et les supprimer.
-Ressources: CRUD pour gérer les ressources associées aux projets. Vous pouvez créer de nouvelles ressources, récupérer les ressources existantes, les mettre à jour et les supprimer.
-Authentification
-Cette API ne nécessite pas d'authentification pour l'instant. 
+Page principale (liste des connaissances)
+Sur la page principale, vous pouvez afficher la liste des connaissances. Les fonctionnalités disponibles sont les suivantes :
 
+Ajouter une connaissance : Cliquez sur le pictogramme "+" pour ouvrir un composant de type dialog qui vous permet de soumettre un formulaire pour ajouter une nouvelle connaissance.
+Supprimer une connaissance : Utilisez le tableau répertoriant les connaissances pour supprimer une connaissance spécifique.
+Page de liste des ressources
+Sur la page de liste des ressources, vous pouvez afficher la liste des ressources. Les fonctionnalités disponibles sont les suivantes :
+
+Ajouter une ressource : Cliquez sur le pictogramme "+" pour ouvrir un composant de type dialog qui vous permet de soumettre un formulaire pour ajouter une nouvelle ressource.
+Supprimer une ressource : Utilisez le tableau répertoriant les ressources pour supprimer une ressource spécifique.
+Structure du projet
+La structure du projet Angular suit une convention classique :
+
+src/ : Ce répertoire contient le code source de l'application.
+app/ : Ce répertoire contient les composants, services et autres éléments Angular de l'application.
+components/ : Ce répertoire contient les composants réutilisables utilisés dans l'application.
+pages/ : Ce répertoire contient les différentes pages de l'application, notamment la page de login, la page principale et la page
