@@ -1,5 +1,5 @@
     API .net
-Bienvenue dans l'API de gestion des projets ainsi que de ses connaissances, catégories et ressources ! Cette API est construite à l'aide de la plateforme .NET et permet de réaliser des opérations CRUD (Create, Read, Update, Delete) sur différentes entités, notamment les connaissances, les catégories, les projets et les ressources. Vous pouvez explorer et tester les différentes fonctionnalités de cette API en accédant à l'URL suivante : https://localhost:7219/swagger/index.html.
+Bienvenue dans l'API de gestion des projets ainsi que de ses connaissances, catégories et ressources ! Cette API est construite à l'aide de la plateforme .NET et permet de réaliser des opérations CRUD (Create, Read, Update, Delete) sur différentes entités, notamment les connaissances, les catégories, les projets et les ressources.
 
 
     Installation
